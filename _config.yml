@@ -21,6 +21,7 @@ comment:
 social:
     # weibo: 5366874726 
     github: song-hailong
+    bilibili: 430143582?spm_id_from=333.1007.0.0
     # zhihu: panpanleopard
     # juejin: xxx
     # jianshu: 2ada30d8d0f7
@@ -67,7 +68,6 @@ blog_button:
 nav:
     - {title: 所有文章, description: archive, url: '/archive'}   
     - {title: 标签, description: tags, url: '/tags'}      
-#    - {title: 技术支持, description: support, url: '/support'}      
     - {title: 关于我, description: about, url: '/about'}   
     
 

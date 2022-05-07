@@ -13,6 +13,15 @@
           </li>
           {% endif %}
 
+          {% if site.social.bilibili %}
+          <!-- bilibili -->
+          <li class="navigation__item_social">
+            <a href="https://space.bilibili.com/{{site.social.bilibili}}" title="@{{site.social.bilibili}} 的 bilibili" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/bilibili.png);"></div>
+            </a>
+          </li>
+          {% endif %}
+
           {% if site.social.zhihu %}
           <!-- Zhihu -->
           <li class="navigation__item_social">

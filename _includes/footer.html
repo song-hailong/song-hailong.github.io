@@ -82,12 +82,12 @@
           {% endif %}
           
           <!-- RSS -->
-          <li class="navigation__item_social">
+          <!--li class="navigation__item_social">
             <a href="/feed.xml" rel="author" title="RSS" target="_blank">
               <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
               <span class="label">RSS</span>
             </a>
-          </li>
+          </li-->
 
           </ul>
         </nav>
@@ -96,7 +96,9 @@
 
         <div class = "footer_div">  
            <p class="copyright text-muted">
-            Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }} Theme by <a href="http://leopardpan.cn/">leopardpan</a> |
+            Copyright &copy; {{ site.signoff }} {{ site.time | date: '%Y' }} |
+
+            <!--Copyright &copy; {{ site.signoff }} {{ site.time | date: '%Y' }} Theme by <a href="http://leopardpan.cn/">leopardpan</a> |-->
             <!--iframe
                 style="margin-left: 2px; margin-bottom:-5px;"
                 frameborder="0" scrolling="0" width="91px" height="20px"

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 	VS Code基于g++ and CMake编译
-date: 2022-05-07
-tags: Blinker   
+title: 	VS Code 基于 g++ and CMake 编译 C/C++
+date: 2022-05-14
+tags: C/C++
 ---
 
 # g++ and CMake

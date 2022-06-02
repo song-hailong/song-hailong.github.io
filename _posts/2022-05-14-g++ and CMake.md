@@ -14,11 +14,12 @@ tags: C/C++
 
 ## 1.1 安装mingw-w64编译器（GCC for Windows 64 & 32 bits）、Cmake工具（选装）
 
-*   下载完毕后直接解压复制到文件夹，例复制到D:\ProgramFiles。
+*   下载完毕后直接解压复制到文件夹，例复制到 D:\ProgramFiles。
 
 *   添加环境变量：
 
     > D:\ProgramFiles\cmake\bin
+    > 
     > D:\ProgramFiles\mingw64\bin
 
 *   验证安装是否成功，在终端里分别输入**gcc** 、**g++** 和 **cmake** 进行验证。

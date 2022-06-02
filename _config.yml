@@ -33,7 +33,6 @@ social:
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
 baidu:
-    # id: 9ffbd85b4be1eb3d7366bb28483ab894
     id: 2f2374035371cbbffc1752be9441ec05
 
 # Google Analytics

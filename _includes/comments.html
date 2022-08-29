@@ -27,13 +27,13 @@
         this.page.url = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
         this.page.identifier = "{{ page.url }}";
     };
-    var disqus_shortname = '{{ site.comment.disqus }}';
+    //var disqus_shortname = '{{ site.comment.disqus }}';
     
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.src = 'https://' + '{{ site.comment.disqus }}' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
+        (d.head || d.body).appendChild(s);
         })();
     </script>
     <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>

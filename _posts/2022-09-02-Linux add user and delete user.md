@@ -8,10 +8,11 @@ tag: Linux
 > 参考文章：
 [Linux_创建新用户](https://zhuanlan.zhihu.com/p/413577022)
 [linux创建新用户](https://blog.csdn.net/u9king/article/details/116261122)
-> 
 
-<aside>
+
 📌 前言：最近白嫖了一个月的阿里云服务器，默认只有 root 用户，所以想新建一个普通用户使用。
+
+
 # 1. 创建新用户 `abc`
 
 在root账户下输入以下命令，创建 `abc` 用户。

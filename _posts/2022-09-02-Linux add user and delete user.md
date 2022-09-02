@@ -53,8 +53,7 @@ sudo usermod -s /bin/bash abc  #确保创建新用户也是使用的bash脚本
     chown abc:abc -R /home/abc
     ```
     
-    ![Untitled](https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%201.png)
-    
+    <img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%201.png" alt="Untitled" style="zoom:80%;" />
 
 再次登录 abc 用户，就不会再报错了。
 
@@ -78,11 +77,11 @@ abc     ALL=(ALL:ALL) ALL
 
 如下图所示
 
-![Untitled](https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%202.png)
+<img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%202.png" alt="Untitled" style="zoom:50%;" />
 
 输入完成后，先按 `ESC` 键，再输入 `:wq` 后按 回车键，保存并退出。
 
-![Untitled](https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%203.png)
+<img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%203.png" alt="Untitled" style="zoom:80%;" />
 
 再执行以下命令取消该文件的权限
 
@@ -102,7 +101,7 @@ userdel -r abc  #在root权限下将测试用户删掉，并删除用户文件�
 
 如下图所示
 
-![uTools_1662125756649.png](https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/uTools_1662125756649.png)
+<img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/uTools_1662125756649.png" alt="uTools_1662125756649.png" style="zoom:80%;" />
 
 在通过以下指令查询该用户时，提示没有此用户
 

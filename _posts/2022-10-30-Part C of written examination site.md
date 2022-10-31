@@ -104,26 +104,28 @@ tag: 嵌入式软件笔试
 
   参照[2]绘制
 
-> 引用：
-[1] [浅谈text段、data段和bss段](https://songhailong.notion.site/text-data-bss-_-CSDN-_text-89eea0e6a9b94cfab22e6028c3c37dd2)
-[2] [终于知道什么叫BSS段](https://songhailong.notion.site/BSS-CSDN-_bss-fb2ebba29fe44c2399c6565d153fad78)
-[3] [基础知识——嵌入式内存使用分析(text data bss及堆栈)](https://songhailong.notion.site/text-data-bss-CSDN-03bac9f10c57447ca5a0c276b1887e65)
-[4] [程序各个段text,data,bss,stack,heap](https://songhailong.notion.site/text-data-bss-stack-heap-bb5933405e514d62bfb30242395ec488)
-[5] [(深入理解计算机系统) bss段，data段、text段、堆(heap)和栈(stack)](https://songhailong.notion.site/bss-data-text-heap-stack-_51CTO-db1a1fdd2b88455db046f13d8df0a8ef)
+> 引用：  
+> [1] [浅谈text段、data段和bss段](https://songhailong.notion.site/text-data-bss-_-CSDN-_text-89eea0e6a9b94cfab22e6028c3c37dd2)  
+>[2] [终于知道什么叫BSS段](https://songhailong.notion.site/BSS-CSDN-_bss-fb2ebba29fe44c2399c6565d153fad78)  
+>[3] [基础知识——嵌入式内存使用分析(text data bss及堆栈)](https://songhailong.notion.site/text-data-bss-CSDN-03bac9f10c57447ca5a0c276b1887e65)  
+>[4] [程序各个段text,data,bss,stack,heap](https://songhailong.notion.site/text-data-bss-stack-heap-bb5933405e514d62bfb30242395ec488)  
+>[5] [(深入理解计算机系统) bss段，data段、text段、堆(heap)和栈(stack)](https://songhailong.notion.site/bss-data-text-heap-stack-_51CTO-db1a1fdd2b88455db046f13d8df0a8ef)
 
 ## 3.5 C/C++ 内存分区
 
 程序执行时，内存也可按如下分区：
 
-- 动态存储区
-    - **堆区（heap）**：由程序猿手动申请，手动释放。使用malloc或者new进行堆的申请。
+- **动态存储区**
+    - **堆区（heap）**：由程序猿手动申请，手动释放。使用malloc或者new进行堆的申请。  
     - **栈区（stack）**：由编译器自动分配释放。存放函数的参数、局部变量、局部常量（const 变量）；
-- **静态存储区（全局区 static）**：静态存储区内的变量在程序编译阶段已经分配好内存空间并初始化。这块内存在程序的整个运行期间都存在。存放：字符串常量、全局常量（const 变量）、静态变量、全局变量等；
+
+- **静态存储区（全局区 static）**：静态存储区内的变量在程序编译阶段已经分配好内存空间并初始化。这块内存在程序的整个运行期间都存在。存放：字符串常量、全局常量（const 变量）、静态变量、全局变量等；  
   
-    > 可分**全局已初始化区**和**全局未初始化区**（即上文BSS段中的变量），这里未做区分。静态存储区内的变量若未初始化，则编译器会自动以默认的方式进行初始化，即静态存储区内不存在未初始化的变量。
-    > 
-    - **常量存储区（const）**：常量占用内存，只读状态，不可修改。存放字符串常量和全局常量。
-- **程序代码区**：存放程序编译后的二进制代码，不可寻址区。
+    > 可分**全局已初始化区**和**全局未初始化区**（即上文BSS段中的变量），这里未做区分。静态存储区内的变量若未初始化，则编译器会自动以默认的方式进行初始化，即静态存储区内不存在未初始化的变量。  
+
+    - **常量存储区（const）**：常量占用内存，只读状态，不可修改。存放字符串常量和全局常量。  
+
+- **程序代码区**：存放程序编译后的二进制代码，不可寻址区。  
 
 ```cpp
 int a = 0;//静态全局变量区 全局初始化区
@@ -141,9 +143,9 @@ void main()
 }
 ```
 
-> 引用：
-[C/C++的四大内存分区和常量的存储位置](https://songhailong.notion.site/C-C-1ce31c9a33fd4246bed45bbb2c157658)
-[内存分区](https://songhailong.notion.site/CSDN-e5751d0649264078994e2ba93fcb655a)
+> 引用：  
+>[C/C++的四大内存分区和常量的存储位置](https://songhailong.notion.site/C-C-1ce31c9a33fd4246bed45bbb2c157658)  
+>[内存分区](https://songhailong.notion.site/CSDN-e5751d0649264078994e2ba93fcb655a)
 
 # 4. 处理器大小端
 
@@ -197,23 +199,23 @@ void main()
     ```
     
 
-> 引用：
-[大端 / 小端，三种判断方法](https://songhailong.notion.site/CSDN-6eda08e4ae4f4feebc7dd7feaadcc9e9)
-[C++怎么判断大小端模式](https://songhailong.notion.site/C-de32ce37a27c42329723871b344655fc)
+> 引用：  
+[大端 / 小端，三种判断方法](https://songhailong.notion.site/CSDN-6eda08e4ae4f4feebc7dd7feaadcc9e9)  
+[C++怎么判断大小端模式](https://songhailong.notion.site/C-de32ce37a27c42329723871b344655fc)  
 
 # 5. 结构体
 
 ## 5.1 结构体的对齐
 
-> 对内向上对齐，整体4字节对齐
-> 
+> 对内向上对齐，整体4字节对齐  
+
 1. 结构体(struct)的数据成员，**第一个数据成员**存放的地址为**结构体变量偏移量为0**的地址处。
-2. 其他结构体成员自身对齐时，存放的地址为**min{有效对齐值为自身对齐值, 指定对齐值}** 的**最小整数倍**的地址处。
+2. 其他结构体成员自身对齐时，存放的地址为**min{有效对齐值为自身对齐值, 指定对齐值}** 的**最小整数倍**的地址处。  
   
-    > **自身对齐值**：结构体变量里**每个成员的自身大小** ；
-    **指定对齐值**：有宏 **#pragma pack(N)** 指定的值，这里面的 **N一定是2的幂次方。**如1,2,4,8,16等。如果没有通过宏那么在**32位Linux**主机上**默认指定对齐值为4，64位的默认对齐值为8，**AMR CPU默认指定对齐值为8；
-    **有效对齐值**：结构体成员自身对齐时**有效对齐值为自身对齐值**与**指定对齐值中较小**的一个。
-    > 
+    > **自身对齐值**：结构体变量里**每个成员的自身大小** ；  
+    > **指定对齐值**：有宏 **#pragma pack(N)** 指定的值，这里面的 **N一定是2的幂次方。**如1,2,4,8,16等。如果没有通过宏那么在**32位Linux**主机上**默认指定对齐值为4，64位的默认对齐值为8，**AMR CPU默认指定对齐值为8；  
+    > **有效对齐值**：结构体成员自身对齐时**有效对齐值为自身对齐值**与**指定对齐值中较小**的一个。  
+
 3. 总体对齐时，字节大小是**min{所有成员中自身对齐值最大的，指定对齐值}** 的整数倍。
 
 ## 5.2 对齐系数
@@ -228,9 +230,9 @@ void main()
 //此代码在64位Linux下编写
 typedef struct _st_struct2
 {
-		char a;
-		int c;
-		short b;
+    char a;
+    int c;
+    short b;
 }st_struct2;
 
 printf("%ld\n",sizeof(st_struct2));
@@ -252,10 +254,10 @@ printf("%ld\n",sizeof(st_struct2));
 ```cpp
 struct ftl_block_status
 {
-		zx_uint32_t erase_times : 28;
-		zx_uint32_t block_status: 3;
-		zx_uint32_t reserv : 1;
-		struct ftl_pagestatus page_status;  /*status bitmap for each page inside of block */
+    zx_uint32_t erase_times : 28;
+    zx_uint32_t block_status: 3;
+    zx_uint32_t reserv : 1;
+    struct ftl_pagestatus page_status;  /*status bitmap for each page inside of block */
 };
 ```
 
@@ -298,6 +300,7 @@ struct ftl_block_status
         
         > 区分常量指针和指针常量的关键就在于**星号的位置**，我们以星号为分界线，如果const在星号的左边，则为常量指针，如果const在星号的右边则为指针常量。如果我们将星号读作‘指针’，将const读作‘常量’的话，内容正好符合。
         > 
+
     - const即修饰指针，又修饰常量。指针指向不可以改，指针指向的值也不可以更改。
       
         ```cpp
@@ -570,12 +573,12 @@ sizeof(str4) = 6;  strlen(str4) = 2;
 #include<stdio.h>
 int main()
 {
-		int a[10]={0,1,2,3,4,5,6,7,8,9};
-		int *p=a;
-		printf("%d %d %d %d %d %d %d %d %d %d ",
-					 0[a],*(p+1),*(a+2),a[3],p[4],5[p],(&a[5])[1],1[(&a[6])],(&a[9])[-1],9[&a[0]]);
-		
-		return 0;
+    int a[10]={0,1,2,3,4,5,6,7,8,9};
+    int *p=a;
+    printf("%d %d %d %d %d %d %d %d %d %d ",
+                    0[a],*(p+1),*(a+2),a[3],p[4],5[p],(&a[5])[1],1[(&a[6])],(&a[9])[-1],9[&a[0]]);
+    
+    return 0;
 }
 ```
 

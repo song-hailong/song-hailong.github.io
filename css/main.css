@@ -25,7 +25,7 @@ ol, ul {
 
 blockquote, q {
   quotes: none; 
-  background-color: #f0f0f0;
+  /*background-color: #f0f0f0;*/
 }
 blockquote:before, blockquote:after {
   content: '';
@@ -163,7 +163,7 @@ em {
 blockquote {
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 10px;
+  padding-left: 00px; /*10px*/
   margin-left: 20px;
 
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -206,8 +206,8 @@ pre {
   margin-left: 20px;
   margin-bottom: 1.3em;
   /*padding: 0.1em 0.2%;*/
-  background: #e8f2fb;
-  border: 1px solid #c9e1f6;
+  background: #F8F8F8;
+  border: 1px solid #E7EAED;
   border-radius: 3px;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   font-size: .9em;

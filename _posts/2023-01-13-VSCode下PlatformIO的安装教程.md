@@ -21,9 +21,8 @@ tag: IDE
 
 # 2. 设置PlatformIO IDE使用非内置Python
 
-> 此步骤可跳过，直接跳转到 [3. 安装PlatformIO插件](https://www.notion.so/VSCode-PlatformIO-045284a7192e4aea9d72807230de20c7)。 
-PlatformIO依靠Python运行，默认情况下会重新下载一个Python，如果电脑上已经安装过Python且不想再安装一次的，可进行如下步骤，否则直接前往 [3. 安装PlatformIO插件](https://www.notion.so/VSCode-PlatformIO-045284a7192e4aea9d72807230de20c7)。
-> 
+> 此步骤可跳过，直接跳转到 *3. 安装PlatformIO插件* 。 
+PlatformIO依靠Python运行，默认情况下会重新下载一个Python，如果电脑上已经安装过Python且不想再安装一次的，可进行如下步骤，否则直接前往 *3. 安装PlatformIO插件* 。
 
 按下图打开设置的 JSON 文件。
 
@@ -46,7 +45,7 @@ PlatformIO依靠Python运行，默认情况下会重新下载一个Python，如�
 
 <img src="https://s2.loli.net/2023/01/13/LqPmy2szAaGpZOb.png" alt="Untitled" style="zoom: 45%;" />
 
-插件安装完毕后，VSCode右下角会出现PlatformIO的下载进程，等待其下载完毕后即可。由于PlatformIO的服务器在国外，下载速度特别慢，如一直无法下载成功，可前往步骤4。
+插件安装完毕后，VSCode右下角会出现PlatformIO的下载进程，等待其下载完毕后即可。由于PlatformIO的服务器在国外，下载速度特别慢，如一直无法下载成功，可前往 *4. 手动添加PlatformIO数据包* 。
 
 下载完毕后，PlatformIO只下载了公共的数据包，没有下载特定板子的数据包，因此如需使用他人的工程，需依照该工程所用芯片新建一个工程，在第一次新建工程时，PlatformIO会下载好该工程所需的文件。
 
@@ -72,7 +71,7 @@ PlatformIO依靠Python运行，默认情况下会重新下载一个Python，如�
 
 # 4. 手动添加PlatformIO数据包
 
-> 如在进行 [3. 安装PlatformIO插件](https://www.notion.so/VSCode-PlatformIO-045284a7192e4aea9d72807230de20c7) 时已正常下载完成，则无需进行此步骤。
+> 如在进行 *3. 安装PlatformIO插件* 时已正常下载完成，则无需进行此步骤。
 如无法正常下载，则可进行此步骤。
 
 PlatformIO相关的文件均在路径 `C:\Users\yourname\.platformio` 下，其中 `yourname` 为电脑用户名称，因此将下载好的文件复制到此处即可。

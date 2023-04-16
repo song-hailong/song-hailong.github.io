@@ -37,9 +37,9 @@ baidu:
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
-# ga:
-#    id: UA-84134159-3  
-#    host: auto  
+ga:
+    id: G-WQDXW2RJQQ
+    host: auto  
 
 
 # 《----------------- 上面的信息修改成你自己的 ---------------------------》
@@ -74,7 +74,7 @@ nav:
 
 # Pagination
 gems: [jekyll-paginate,jekyll-sitemap]
-paginate: 20
+paginate: 10
 paginate_path: "page/:num/"
 
 

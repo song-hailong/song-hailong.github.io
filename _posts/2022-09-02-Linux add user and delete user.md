@@ -5,11 +5,6 @@ date: 2022-09-02
 tag: Linux
 ---
 
-> 参考文章：
-[Linux_创建新用户](https://zhuanlan.zhihu.com/p/413577022)
-[linux创建新用户](https://blog.csdn.net/u9king/article/details/116261122)
-
-
 📌 前言：最近白嫖了一个月的阿里云服务器，默认只有 root 用户，所以想新建一个普通用户使用。
 
 
@@ -23,7 +18,7 @@ passwd abc  #给新用户设置登录密码（输入密码时看不到的，直�
 usermod -s /bin/bash abc  #确保创建新用户也是使用的bash脚本
 ```
 
-<img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled.png" alt="Untitled" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/04/26/IXmWTtEy4JNVDCY.png" alt="Untitled" style="zoom: 80%;" />
 
 或者非root账号下，在每条命令前加 `sudo` ，每次执行时需输入root账号密码，如下
 
@@ -53,7 +48,7 @@ sudo usermod -s /bin/bash abc  #确保创建新用户也是使用的bash脚本
     chown abc:abc -R /home/abc
     ```
     
-    <img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%201.png" alt="Untitled" style="zoom:80%;" />
+    <img src="https://s2.loli.net/2023/04/26/qUlEJaG13kjYWVb.png" alt="Untitled" style="zoom:80%;" />
 
 再次登录 abc 用户，就不会再报错了。
 
@@ -77,11 +72,11 @@ abc     ALL=(ALL:ALL) ALL
 
 如下图所示
 
-<img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%202.png" alt="Untitled" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/04/26/sUvmozZE8SuRLhW.png" alt="Untitled" style="zoom:80%;" />
 
 输入完成后，先按 `ESC` 键，再输入 `:wq` 后按 回车键，保存并退出。
 
-<img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/Untitled%203.png" alt="Untitled" style="zoom:80%;" />
+<img src="https://s2.loli.net/2023/04/26/3UDTwWp9Nqtxr1Z.png" alt="Untitled" style="zoom:80%;" />
 
 再执行以下命令取消该文件的权限
 
@@ -101,7 +96,7 @@ userdel -r abc  #在root权限下将测试用户删掉，并删除用户文件�
 
 如下图所示
 
-<img src="https://songhailong-1257323743.cos.ap-chengdu.myqcloud.com/uTools_1662125756649.png" alt="uTools_1662125756649.png" style="zoom:80%;" />
+<img src="https://s2.loli.net/2023/04/26/zoSawXbOD3gq4xT.png" alt="uTools_1662125756649.png" style="zoom:80%;" />
 
 在通过以下指令查询该用户时，提示没有此用户
 
@@ -113,3 +108,8 @@ id: ‘abc’: no such user
 # 结尾
 
 推荐一个linux教程：[http://c.biancheng.net/view/844.html](http://c.biancheng.net/view/844.html)
+
+
+> 参考文章：
+> [Linux_创建新用户](https://zhuanlan.zhihu.com/p/413577022)
+> [linux创建新用户](https://blog.csdn.net/u9king/article/details/116261122)

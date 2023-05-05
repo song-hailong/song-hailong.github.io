@@ -37,6 +37,8 @@ python get-platformio.py
 
 <img src="https://s2.loli.net/2023/05/05/Ogd8tJKVa1C2IWZ.png" alt="Untitled" style="zoom:50%;" />
 
+> 参考：https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html
+
 # 3. 安装CLion
 
 有edu邮箱的可去Jetbrains官网申请[教育许可证](https://www.jetbrains.com/zh-cn/community/education/#students/)，或者使用[学信网](https://www.chsi.com.cn/)学籍验证报告申请。在[申请页面](https://www.jetbrains.com/shop/eform/students)选择对应的申请方式即可。完成后，选择CLion进行下载安装，安装完成后登录拥有教育许可证的JetBrains账号即可使用。
@@ -80,9 +82,6 @@ python get-platformio.py
 串口监视器的比特率默认是 9600，如想更换，比如 115200，除把代码中的`Serial.begin(9600)`换成`Serial.begin(115200)`外，还需在 platformio.ini 中加一句`monitor_speed = 115200`，否则会出现乱码。
 
 # 6. 使用第三方库
-
-> 从 [用clion自带的platformIO和开发esp32!!!](https://blog.csdn.net/keysking/article/details/105925962?ops_request_misc=&request_id=&biz_id=102&utm_term=clion%20platformio&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-105925962.142^v86^wechat,239^v2^insert_chatgpt&spm=1018.2226.3001.4187) 复制过来的。
-> 
 
 PlatformIO拥有丰富的第三方库。
 
@@ -167,6 +166,8 @@ PlatformIO拥有丰富的第三方库。
 如需添加本地库，只需将库文件复制到`lib`文件夹中，然后在`CMakeLists.txt` 文件中包含路径即可。
 
 <img src="https://s2.loli.net/2023/05/05/MLqrutBJ2TRpc97.png" alt="Untitled" style="zoom:50%;" />
+
+> 参考：[用clion自带的platformIO和开发esp32!!!](https://blog.csdn.net/keysking/article/details/105925962?ops_request_misc=&request_id=&biz_id=102&utm_term=clion%20platformio&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-105925962.142^v86^wechat,239^v2^insert_chatgpt&spm=1018.2226.3001.4187) 
 
 # 7. 手动添加PlatformIO数据包
 

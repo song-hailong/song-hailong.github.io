@@ -83,11 +83,13 @@ python get-platformio.py
 
 # 6. 使用第三方库
 
+## 6.1 PlatformIO提供的库
+
 PlatformIO拥有丰富的第三方库。
 
 使用 DHT22 传感器进行举例。
 
-我们先打开 [PlatformIO 的 Libraries registry](https://registry.platformio.org/search)，勾选**Library**后搜索 DHT sensor library：
+先打开 [PlatformIO 的 Libraries registry](https://registry.platformio.org/search)，勾选**Library**后搜索 DHT sensor library：
 
 <img src="https://s2.loli.net/2023/05/05/jCvBOdK7m8lGkpS.png" alt="Untitled" style="zoom:50%;" />
 
@@ -163,11 +165,15 @@ PlatformIO拥有丰富的第三方库。
 
 <img src="https://s2.loli.net/2023/05/05/KgpwTso9uPGQDl1.png" alt="Untitled" style="zoom: 45%;" />
 
-如需添加本地库，只需将库文件复制到`lib`文件夹中，然后在`CMakeLists.txt` 文件中包含路径即可。
+> 参考：[用clion自带的platformIO和开发esp32!!!](https://blog.csdn.net/keysking/article/details/105925962?ops_request_misc=&request_id=&biz_id=102&utm_term=clion%20platformio&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-105925962.142^v86^wechat,239^v2^insert_chatgpt&spm=1018.2226.3001.4187) 
+
+## 6.2 其他库
+
+只需将库文件下载下来后，复制到`lib`文件夹中，然后在`CMakeLists.txt` 文件中包含路径即可。
+
+> Arduino IDE下载的库文件均在路径 `C:\Users\yourname\Documents\Arduino\libraries` 下
 
 <img src="https://s2.loli.net/2023/05/05/MLqrutBJ2TRpc97.png" alt="Untitled" style="zoom:50%;" />
-
-> 参考：[用clion自带的platformIO和开发esp32!!!](https://blog.csdn.net/keysking/article/details/105925962?ops_request_misc=&request_id=&biz_id=102&utm_term=clion%20platformio&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-105925962.142^v86^wechat,239^v2^insert_chatgpt&spm=1018.2226.3001.4187) 
 
 # 7. 手动添加PlatformIO数据包
 

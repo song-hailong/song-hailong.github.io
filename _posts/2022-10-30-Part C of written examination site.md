@@ -76,40 +76,54 @@ tag: 嵌入式软件笔试
 内存对齐不是逻辑上的问题，是硬件的问题。
 对齐访问配合硬件，所以效率很高，非对齐访问因为和硬件本身不搭配，所以效率不高，但由于兼容性的问题，一般硬件也都提供非对齐访问，但效率很低
 
-## 3.4 text段 data段 bss段  
+## 3.4 内存分区
 
-- 程序执行前
-  
-    一个程序本质上都是由 bss段、data段、text段三个段组成。[1、5]
-    
-    - **text段**：代码段。存放代码和字符串，编译时确定，只读。
-    - **data段**：数据段。已初始化的（非 0）全局变量 、常量 、全局或局部静态变量，存放在编译阶段(而非运行时)就能确定的数据，可读可写。
-    - **bss段**：BSS段，存未初始化的静态变量 、 未初始化的全局变量 和 初始化为0的全局变量。BSS是Unix链接器产生的未初始化数据段，不包含任何数据，只是简单的维护开始和结束的地址[2]。一般在初始化时bss段变量将会清零（bss段属于静态内存分配，即程序一开始就将其清零了），可读可写。
+- 程序本质上由 .bss段、数据段（.data+.rodata）、.text段三个段组成（执行前）。[1、5]
+    - **.text段**：代码段。存放代码和字符串，编译时确定，不可寻址区，只读。
+    - **.rodata段**：常量区。存放字符串常量和全局const 变量。存放在编译阶段(而非运行时)就能确定的数据，只读状态，不可修改。
+    - **.data段**：已初始化全局/静态区。已初始化的（非 0）全局变量 、全局或局部静态变量，存放在编译阶段(而非运行时)就能确定的数据，可读可写。
+    - **.bss段**：未初始化全局/静态区。存未初始化的静态变量 、 未初始化的全局变量 和 初始化为0的全局变量。BSS是Unix链接器产生的未初始化数据段，不包含任何数据，只是简单的维护开始和结束的地址[2]。一般在初始化时bss段变量将会清零（bss段属于静态内存分配，即程序一开始就将其清零了），可读可写。
     
     C/C++程序经编译器编译后产生的**可执行文件**，其**大小**由text段和data段决定。[3、5]
     
     > 原因：从可执行程序的角度来说，如果一个数据未被初始化，就不需要为其分配空间，所以.data 和.bss 的区别就是 .bss 并不占用可执行文件的大小，仅仅记录需要用多少空间来存储这些未初始化的数据，而不分配实际空间。[3]
-   
-- 程序执行时
-  
-    程序在执行时，会产生临时变量或者函数返回值，还会有函数中的动态分配地址空间（如 malloc、new），此时才会出现堆（heap）和栈（stack）[4]。
-    
-    - **栈区（stack）**：由编译器自动分配释放 ，存放函数的参数值，局部变量的值等，用来函数切换时保存现场。其操作方式类似于数据结构中的栈。栈地址是向下增长。
+    > 
+- 程序执行时，会产生临时变量或者函数返回值，还会有函数中的动态分配地址空间（如 malloc、new），此时才会出现堆（heap）和栈（stack）[4]。
+    - **堆区（heap）**： 由程序猿手动申请，手动释放，程序结束时可能由OS回收。使用malloc或者new进行堆的申请。注意它与数据结构中的堆是两回事，分配方式类似于链表。堆地址一般是向上增长。
+    - **栈区（stack）**：由编译器自动分配释放 ，存放函数的参数、局部变量、局部常量（const 变量），用来函数切换时保存现场。其操作方式类似于数据结构中的栈。栈地址是向下增长。
       
         > 满增栈 满减栈 空增栈 空减栈
-      
-    - **堆区（heap）**： 一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，分配方式类似于链表。堆地址一般是向上增长。
+        > 
 
-<img src="https://s2.loli.net/2023/05/08/mZqxYJbEfR4s7Qr.png" alt="参照[2]绘制" style="zoom: 33%;" />
+<img src="https://s2.loli.net/2023/09/18/1iJ6wR8fFKrnuoQ.png" alt="参照[2]绘制" style="zoom: 33%;" />
 
-  参照[2]绘制
+参照[2]绘制
 
-> 引用：  
-> [1] [浅谈text段、data段和bss段](https://songhailong.notion.site/text-data-bss-_-CSDN-_text-89eea0e6a9b94cfab22e6028c3c37dd2)  
->[2] [终于知道什么叫BSS段](https://songhailong.notion.site/BSS-CSDN-_bss-fb2ebba29fe44c2399c6565d153fad78)  
->[3] [基础知识——嵌入式内存使用分析(text data bss及堆栈)](https://songhailong.notion.site/text-data-bss-CSDN-03bac9f10c57447ca5a0c276b1887e65)  
->[4] [程序各个段text,data,bss,stack,heap](https://songhailong.notion.site/text-data-bss-stack-heap-bb5933405e514d62bfb30242395ec488)  
->[5] [(深入理解计算机系统) bss段，data段、text段、堆(heap)和栈(stack)](https://songhailong.notion.site/bss-data-text-heap-stack-_51CTO-db1a1fdd2b88455db046f13d8df0a8ef)
+```cpp
+int a = 0;//静态全局变量区 全局初始化区
+char *p1; //静态全局变量区 中的 全局未初始化区，编译器默认初始化为 NULL
+void main()
+{
+    int b; //栈
+    char s[] = "abc";//栈
+    char *p2 = "123456";//p2在栈上，123456在字符串常量区
+    static int c = 0; //c在静态变量区，0为文字常量，在代码区
+    const int d = 0; //栈
+    static const int d;//静态常量区
+    p1 = (char *)malloc(10);//分配得来得10字节在堆区。
+    strcpy(p1, "123456"); //123456放在字符串常量区，编译器可能会将它与p2所指向的"123456"优化成一个地方
+}
+```
+
+> 引用：
+[1] [浅谈text段、data段和bss段](https://www.notion.so/text-data-bss-_-CSDN-_text-89eea0e6a9b94cfab22e6028c3c37dd2?pvs=21)
+[2] [终于知道什么叫BSS段](https://www.notion.so/BSS-CSDN-fb2ebba29fe44c2399c6565d153fad78?pvs=21)
+[3] [基础知识——嵌入式内存使用分析(text data bss及堆栈)](https://www.notion.so/text-data-bss-CSDN-03bac9f10c57447ca5a0c276b1887e65?pvs=21)
+[4] [程序各个段text,data,bss,stack,heap](https://www.notion.so/text-data-bss-stack-heap-bb5933405e514d62bfb30242395ec488?pvs=21)
+[5] [(深入理解计算机系统) bss段，data段、text段、堆(heap)和栈(stack)](https://www.notion.so/bss-data-text-heap-stack-_51CTO-db1a1fdd2b88455db046f13d8df0a8ef?pvs=21)
+[6] [C/C++的四大内存分区和常量的存储位置](https://www.notion.so/C-C-1ce31c9a33fd4246bed45bbb2c157658?pvs=21)
+[7] [内存分区](https://www.notion.so/CSDN-e5751d0649264078994e2ba93fcb655a?pvs=21)
+>
 
 ## 3.5 C/C++ 内存分区
 
@@ -214,7 +228,7 @@ void main()
     > **有效对齐值**：结构体成员自身对齐时**有效对齐值为自身对齐值**与**指定对齐值中较小**的一个。  
   
 3. 总体对齐时，字节大小是**min{所有成员中自身对齐值最大的，指定对齐值}** 的整数倍。
-  
+
 ## 5.2 对齐系数
 
 每个特定平台上的编译器都有自己的默认“对齐系数”(也叫对齐模数)。程序员可以通过预编译命令`#pragma pack(n), n = 1,2,4,8,16`来改变这一系数，其中的n就是你要指定的“对齐系数”。
@@ -279,10 +293,19 @@ struct ftl_block_status
 
 # 7. const 修饰
 
-- **const 修饰变量**：该变量为**常量**，不可修改，代表 只读。必须要给变量初始化。
+- **const 修饰变量**：该变量为**不可改变的变量**，而非常量，代表 只读。必须要给变量初始化。  
   
+    > 常量存在flash中，而const修饰的变量不一定在flash中，具体看编译器。如CodeWarrior将const变量存在flash中。
+    > 
+    
+    ```cpp
+    const char LEN = 10
+    char array[LEN]; // 编译报错，因为编译阶段LEN无效，
+    // 而采用宏定义 #defin LEN 10的话则有效。
+    ```
+    
 - **const 修饰指针**：  
-      
+  
     - const修饰指针：**常量指针**。指针指向可以改，指针指向的值不可以更改，但是还是可以通过其他的引用来改变变量的值的。  
     
         ```cpp
